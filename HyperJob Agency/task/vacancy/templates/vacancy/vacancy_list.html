@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+
+{% block content %}
+  <h1>Vacancy List</h1>
+  {% if vacancy_list %}
+<div>
+    <ul>
+      {% for vacancy in vacancy_list %}
+      <li>
+        {{ vacancy.author }}: {{ vacancy.description }}
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No items found!</p>
+
+</div>
+  {% endif %}
+{% endblock %}

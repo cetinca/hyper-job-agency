@@ -1,0 +1,11 @@
+{%extends 'base.html' %}
+{% block content %}
+{% csrf_token %}
+{% if user.is_staff %}
+    <p><a href="{% url 'vacancy_create' %}">Create Vacancy</a></p>
+{% elif user.is_authenticated %}
+    <p><a href="{% url 'resume_create' %}">Create Resume</a></p>
+{% else %}
+    <p>Please log in to access this page.</p>
+{% endif %}
+{% endblock content %}

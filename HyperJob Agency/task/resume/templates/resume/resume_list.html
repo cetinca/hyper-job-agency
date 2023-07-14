@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+
+{% block content %}
+  <h1>Resume List</h1>
+  {% if resume_list %}
+<div>
+    <ul>
+      {% for resume in resume_list %}
+      <li>
+        {{ resume.author }}: {{ resume.description }}
+      </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No items found!</p>
+
+</div>
+  {% endif %}
+{% endblock %}
